@@ -15,13 +15,16 @@ function createWorkDaySchedule() {
         rowEl.addClass("row");
         
         // p for hour time
-        const hourEl = $("<p>");
-        hourEl.addClass("hour col-1");
-        
+        const hourEl = $("<div>");
+        hourEl.addClass("hour col d-flex align-items-center");
+        const pElement = $("<p>");
+        pElement.css("margin-bottom", "0px");
+
         // configure text for hourEL
         const hour = START_TIME_HOUR + i;
         const hourText = moment(`${hour}`, "h").format(`h a`);
-        hourEl.text(hourText);
+        pElement.text(hourText);
+        hourEl.append(pElement);
 
         // form of type input for text area
         const inputEl = $("<input>");
@@ -29,7 +32,7 @@ function createWorkDaySchedule() {
 
         // button for save button
         const buttonEl = $("<button>");
-        buttonEl.addClass("saveBtn col-1");
+        buttonEl.addClass("saveBtn col");
 
         // append three elements to row
         rowEl.append(hourEl, inputEl, buttonEl);
