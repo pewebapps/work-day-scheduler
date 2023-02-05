@@ -1,4 +1,5 @@
 const DAY_WORKING_HOURS = 9;
+const START_TIME_HOUR = 9;
 
 // set present date
 function setCurrentDay() {
@@ -16,6 +17,11 @@ function createWorkDaySchedule() {
         // p for hour time
         const hourEl = $("<p>");
         hourEl.addClass("hour col-1");
+        
+        // configure text for hourEL
+        const hour = START_TIME_HOUR + i;
+        const hourText = moment(`${hour}`, "h").format(`h a`);
+        hourEl.text(hourText);
 
         // form of type input for text area
         const inputEl = $("<input>");
