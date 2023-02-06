@@ -33,6 +33,7 @@ function createWorkDaySchedule() {
         // button for save button
         const buttonEl = $("<button>");
         buttonEl.addClass("saveBtn col");
+        buttonEl.text("💾");
 
         // append three elements to row
         rowEl.append(hourEl, inputEl, buttonEl);
