@@ -29,8 +29,8 @@ function createWorkDaySchedule() {
         hourEl.append(pElement);
 
         // form of type input for text area
-        const inputEl = $("<input>");
-        inputEl.addClass("textarea col-10");
+        const inputEl = $("<textarea>");
+        inputEl.addClass(`textarea col-10 index-${i}`);
 
         // update text area background color        
         if (hour < currentHour) {
@@ -41,10 +41,17 @@ function createWorkDaySchedule() {
             inputEl.addClass("future");
         }
 
+        // get local storage and set item
+        const text = localStorage.getItem(`index-${i}`);
+        if (text) {
+            inputEl.text(text);
+        }
+
         // button for save button
         const buttonEl = $("<button>");
         buttonEl.addClass("saveBtn col");
         buttonEl.text("💾");
+        buttonEl.data("index", i);
 
         // append three elements to row
         rowEl.append(hourEl, inputEl, buttonEl);
@@ -56,3 +63,15 @@ function createWorkDaySchedule() {
 
 setCurrentDay();
 createWorkDaySchedule();
+
+
+$(".saveBtn").on("click", function(event){
+    const element = event.target;
+    const index = $( element ).data("index");
+
+    // get text area element and text inside it
+    const inputEl = $(`.index-${index}`);
+    const value = inputEl.val();
+   
+    localStorage.setItem(`index-${index}`, value);
+})
