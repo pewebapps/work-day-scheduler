@@ -31,6 +31,7 @@ function createWorkDaySchedule() {
         // form of type input for text area
         const inputEl = $("<input>");
         inputEl.addClass("textarea col-10");
+        inputEl.data("index", i);
 
         // update text area background color        
         if (hour < currentHour) {
@@ -45,6 +46,7 @@ function createWorkDaySchedule() {
         const buttonEl = $("<button>");
         buttonEl.addClass("saveBtn col");
         buttonEl.text("💾");
+        buttonEl.data("index", i);
 
         // append three elements to row
         rowEl.append(hourEl, inputEl, buttonEl);
@@ -56,3 +58,9 @@ function createWorkDaySchedule() {
 
 setCurrentDay();
 createWorkDaySchedule();
+
+
+$(".saveBtn").on("click", function(event){
+    const element = event.target;
+    const index = $( element ).data("index");
+})
