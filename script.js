@@ -9,6 +9,8 @@ function setCurrentDay() {
 
 // method that sets up work day with correct rows
 function createWorkDaySchedule() {
+    const currentHour = moment().format("H");
+
     for (let i = 0; i < DAY_WORKING_HOURS; i++) {
         // div for each row 
         const rowEl = $("<div>");
@@ -29,6 +31,15 @@ function createWorkDaySchedule() {
         // form of type input for text area
         const inputEl = $("<input>");
         inputEl.addClass("textarea col-10");
+
+        // update text area background color        
+        if (hour < currentHour) {
+            inputEl.addClass("past");
+        } else if (hour == currentHour) {
+            inputEl.addClass("present")
+        } else {
+            inputEl.addClass("future");
+        }
 
         // button for save button
         const buttonEl = $("<button>");
