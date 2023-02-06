@@ -30,8 +30,7 @@ function createWorkDaySchedule() {
 
         // form of type input for text area
         const inputEl = $("<input>");
-        inputEl.addClass("textarea col-10");
-        inputEl.data("index", i);
+        inputEl.addClass(`textarea col-10 index-${i}`);
 
         // update text area background color        
         if (hour < currentHour) {
@@ -63,4 +62,8 @@ createWorkDaySchedule();
 $(".saveBtn").on("click", function(event){
     const element = event.target;
     const index = $( element ).data("index");
+
+    // get text area element and text inside it
+    const inputEl = $(`.index-${index}`);
+    const value = inputEl.val();
 })
