@@ -1,4 +1,4 @@
-# Workday Schedule
+# Work Day Scheduler
 
 <style>
 grey { color: #d3d3d3 }
@@ -6,9 +6,9 @@ red { color: #ff6961 }
 green { color: #77dd77 }
 </style>
 
-Workday Schedule is a web application that allows you to plan your workday.
+Work Day Scheduler is a web application that allows you to plan your work day.
 
-The Workday Schedule is split up into nine 1-hour slots, starting from 9am and ending at 5pm.
+The Work Day Scheduler is split up into nine 1-hour time slots, starting from 9am and ending at 5pm.
 The current days date is displayed below the title.
 
 You can input text into each 1-hour slot, to represent what you will be doing for that particular hour in the day.
@@ -21,7 +21,7 @@ The colors are:
  * <red>Red</red> for the present
  * <green>Green</green> for the future
 
-This Workday Schedule has been deployed using GitHub Pages and can be viewed [here](https://pewebapps.github.io/work-day-scheduler/)
+The Work Day Scheduler has been deployed using GitHub Pages and can be viewed [here](https://pewebapps.github.io/work-day-scheduler/)
 
 
 
