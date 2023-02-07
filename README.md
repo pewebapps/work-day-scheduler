@@ -23,6 +23,9 @@ The colors are:
 
 The Work Day Scheduler has been deployed using GitHub Pages and can be viewed [here](https://pewebapps.github.io/work-day-scheduler/)
 
+ 
+![Empty Screenshot Image](./assets/images/work-day-scheduler-screenshot.png)
+
 
 
  
